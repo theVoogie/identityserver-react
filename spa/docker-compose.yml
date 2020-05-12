@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./
+    image: identityserver-react/spa:latest
+    ports:
+      - 8101:8100
+    environment:
+      - BACKEND=http://localhost:3001

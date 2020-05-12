@@ -1,0 +1,21 @@
+[
+    {
+      "uuid": "5906476e-d0c5-4d8e-b2bd-7f1d204da0e4",
+      "created": "2020-04-23T05:41:58.0131609",
+      "personNumber": "29037402298",
+      "firstName": "Hilde",
+      "middleName": "",
+      "lastName": "Lygre",
+      "organizationNumber": "974761262",
+      "signOnDate": "2020-03-01T00:00:00",
+      "signOffDate": "2020-04-01T00:00:00",
+      "serviceHours": 24,
+      "serviceCode": "Chef",
+      "serviceDescription": "Skipskokk",
+      "imo": "9278234",
+      "callSign": "LMSD",
+      "vesselName": "COLOR FANTASY",
+      "vesselId": "TEST",
+      "optional": "Test test test"
+    }
+  ]
