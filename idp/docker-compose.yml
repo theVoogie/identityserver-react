@@ -5,15 +5,13 @@ networks:
 
 services:
   identityserver:
-    container_name: IdentityServer
+    container_name: idp
     restart: unless-stopped
     image: ${DOCKER_REGISTRY-}identityserver
     networks:
       sdir:
     environment:
       TZ: Europe/Oslo
-    ports:
-      - "8443:443"
     hostname: identityserver
     build:
       context: .

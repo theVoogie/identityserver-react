@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import SC from './styled';
-import { useAuth } from '../../providers/auth';
+// import { useAuth } from '../../providers/auth';
 
 export default (() => {
   // const auth = useAuth();
@@ -15,14 +15,16 @@ export default (() => {
   return (
     <SC.Header>
       <SC.HeaderNav>
-        <SC.APSLogo>APS</SC.APSLogo>
-        <SC.HeaderLink to="/personer">Sertifikatsøknader</SC.HeaderLink>
-        <SC.HeaderLink to="/test">Søk sjøfolk</SC.HeaderLink>
+        <SC.Logo>IDP &amp; SPA Demo</SC.Logo>
+        <SC.HeaderLink to="/persons">Persons</SC.HeaderLink>
+        <SC.HeaderLink to="/test">Test</SC.HeaderLink>
       </SC.HeaderNav>
-      <SC.UserIcon2 to="/account">
-        <SC.UserName>Karoline Kristiansen</SC.UserName>
-        <FontAwesomeIcon icon={faUser} />
-      </SC.UserIcon2>
+      <SC.AccountInfo to="/account">
+        <SC.AccountItem>John Doe</SC.AccountItem>
+        <SC.AccountItem>
+          <SC.FavIcon icon={faUser} size="lg" color="blue" />
+        </SC.AccountItem>
+      </SC.AccountInfo>
     </SC.Header>
   );
 }) as React.FC;

@@ -9,14 +9,43 @@ export class Auth {
   private userManager: UserManager;
 
   constructor() {
-    const STS_DOMAIN: string = 'https://localhost:8443';
+    // const { 
+    //   STS_DOMAIN,
+    //   REDIRECT_URI,
+    //   CLIENT_ID,
+    //   SILENT_REFRESH_URI,
+    //   POST_LOGOUT_URI
+    // } = process.env;
 
+    // console.log('STS_DOMAIN: ' + STS_DOMAIN); // eslint-disable-line
+    // debugger;
+
+    const {
+      STS_DOMAIN
+    } = process.env;
+
+    const {
+      CLIENT_ID
+    } = process.env;
+    //   CLIENT_ID,
+    //   SILENT_REFRESH_URI,
+    //   POST_LOGOUT_URI
+    //} = process.env;
+    console.log('STS_DOMAIN: ' + STS_DOMAIN); // eslint-disable-line
+    debugger;
+    
     const settings: any = {
-      // userStore: new WebStorageStateStore({ store: window.localStorage }),
-      // userStore: new WebStorageStateStore({ store: new InMemoryWebStorage() }),
-      // userStore: new InMemoryWebStorage(),
-      // new WebStorageStateStore({ store: new InMemoryWebStorage() }),
-      authority: STS_DOMAIN,
+      // authority: STS_DOMAIN,
+      // client_id: CLIENT_ID,
+      // redirect_uri: REDIRECT_URI,
+      // silent_redirect_uri: SILENT_REFRESH_URI,
+      // response_type: 'code',
+      // scope: 'openid offline_access profile api1',
+      // post_logout_redirect_uri: POST_LOGOUT_URI,
+      // filterProtocolClaims: true,
+      // automaticSilentRenew: true
+
+      authority:'http://localhost:8080',
       client_id: 'spa_code_client',
       redirect_uri: 'http://localhost:8100/callback.html',
       silent_redirect_uri: 'http://localhost:8100/silent-renew.html',
@@ -26,6 +55,7 @@ export class Auth {
       post_logout_redirect_uri: 'http://localhost:8100/',
       filterProtocolClaims: true,
       automaticSilentRenew: true
+
     };
 
     this.userManager = new UserManager(settings);

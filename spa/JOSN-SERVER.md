@@ -6,13 +6,13 @@ json-server db.json -m ./node_modules/json-server-auth -r routes.json
 
 # Register
 curl -d '{
-  "email": "demo@sdir.no",
+  "email": "demo@example.com",
   "password": "demo"
 }' -H 'Content-Type: application/json' http://localhost:3000/register
 
 # Login
 curl -d '{
-  "email": "demo@sdir.no",
+  "email": "demo@example.com",
   "password": "demo"
 }' -H 'Content-Type: application/json' http://localhost:3000/login
 

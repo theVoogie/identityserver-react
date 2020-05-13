@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = styled.header`
   color: white;
@@ -46,41 +47,32 @@ const HeaderLink = styled(Link)`
   text-decoration: none;
 `;
 
-const UserIcon = styled.div`
-  margin-right: 25px;
-  display: flex;
-  align-items: right;
-
-  & > svg {
-    fill: #0069a5;
-  }
-`;
-
-const UserIcon2 = styled(Link)`
-  margin-right: 25px;
-  display: flex;
+const FavIcon = styled(FontAwesomeIcon)`
+  vertical-align: middle;
+  margin-right: 45px;
+  text-align: center;
   color: white;
-  text-decoration: none;
-  malign-items: right;
-
-  & > svg {
-    fill: #0069a5;
-  }
 `;
 
-const UserName = styled.div`
+const AccountItem = styled.div`
   vertical-align: middle;
   line-height: 60px;
   text-align: center;
   margin-right: 25px;
 `;
 
+const AccountInfo = styled(Link)`
+  margin-right: 25px;
+  display: flex;
+  color: white;
+  text-decoration: none;
+`;
 export default {
   Header,
-  APSLogo,
+  Logo: APSLogo,
   HeaderNav,
   HeaderLink,
-  UserName,
-  UserIcon,
-  UserIcon2
+  AccountItem,
+  FavIcon,
+  AccountInfo
 };

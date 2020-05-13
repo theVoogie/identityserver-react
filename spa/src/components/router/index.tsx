@@ -5,10 +5,9 @@ import SC from './styled';
 
 import Root from '../root';
 import Footer from '../footer';
-import LoginResponsePage from '../login-response-page';
 import AccountPage from '../account-page';
 
-const PersonPage = lazy(() => import('../person-page'));
+const PersonPage = lazy(() => import('../persons-page'));
 const TestPage = lazy(() => import('../test-page'));
 
 // interface RoutesModuleProps {
@@ -29,14 +28,13 @@ export default (() => {
 
   return (
     <BrowserRouter>
-      <SC.SdirHeader />
+      <SC.Header />
       <Root>
         <Suspense fallback={<></>}>
           <Switch>
             <Route exact path="/test" component={TestPage} />
             <Route exact path="/person" component={PersonPage} />
             <Route exact path="/account" component={AccountPage} />
-            <Route exact path="/loginresponse" component={LoginResponsePage} />
             <Redirect from="/" to="/person" />
           </Switch>
         </Suspense>

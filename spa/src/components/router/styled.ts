@@ -6,4 +6,4 @@ const SdirHeader = styled(Header)`
   width: 500px;
 `;
 
-export default { SdirHeader };
+export default { Header: SdirHeader };

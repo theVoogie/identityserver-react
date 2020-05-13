@@ -1,8 +1,7 @@
-version: "3.5"
+version: '3.5'
 
 services:
   frontend:
-    container_name: spa
     build: ./
     image: identityserver-react/spa:latest
     ports:

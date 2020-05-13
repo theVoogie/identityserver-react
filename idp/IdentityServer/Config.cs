@@ -32,11 +32,12 @@ namespace IdentityServer
                 // Code Flow with PKCE
                 new Client
                 {
-                    ClientName = "SPA - Code Flow with PKCE Client",
-                    ClientId = "spa",
+                    ClientName = "SPA Code Flow Client",
+                    ClientId = "spa_code_client",
                     AccessTokenType = AccessTokenType.Reference,
                     AllowOfflineAccess = true, // enable refresh_token
                     RequireConsent = false,
+                    //AccessTokenLifetime = 330,// 330 seconds, default 60 minutes
                     AccessTokenLifetime = 90,// 330 seconds, default 60 minutes
                     IdentityTokenLifetime = 300,
 
@@ -50,17 +51,32 @@ namespace IdentityServer
                         "http://localhost:8100",
                         "http://localhost:8100/loginresponse",
                         "http://localhost:8100/callback.html",
-                        "http://localhost:8100/silent-renew.html"
+                        "http://localhost:8100/silent-renew.html",
+
+                        "http://localhost:8101",
+                        "http://localhost:8101/loginresponse",
+                        "http://localhost:8101/callback.html",
+                        "http://localhost:8101/silent-renew.html"
                     },
                     PostLogoutRedirectUris = new List<string>
                     {
                         "http://localhost:8100/",
-                        "http://localhost:8100"
+                        "http://localhost:8101"
                     },
                     AllowedCorsOrigins = new List<string>
                     {
-                        "http://localhost:8100"
+                        "http://localhost:8100",
+                        "http://localhost:8101"
                     },
+                    // AllowedScopes = new List<string>
+                    // {
+                    //     "openid",
+                    //     "dataEventRecords",
+                    //     "dataeventrecordsscope",
+                    //     "role",
+                    //     "profile",
+                    //     "email"
+                    // },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
